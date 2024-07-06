@@ -11,4 +11,3 @@ __pycache__/
 # Byte code
 *.pyc
 
-*/*.xml
