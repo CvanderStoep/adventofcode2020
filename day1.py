@@ -1,4 +1,6 @@
 from itertools import combinations
+
+
 def read_input_file(file_name: str) -> list:
     with open(file_name) as f:
         content = f.read().splitlines()
@@ -19,7 +21,6 @@ def compute_part_one(file_name: str) -> int:
             return n1 * n2
 
     return 0
-
 
 
 if __name__ == '__main__':
