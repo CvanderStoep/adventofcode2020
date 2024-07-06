@@ -21,6 +21,7 @@ def compute_part_one(file_name: str) -> int:
     return 0
 
 
+
 if __name__ == '__main__':
     print(f"Part I: {compute_part_one('input/input1.txt')}")
     # print(f"Part II: {compute_part_two('input/input1.txt')}")
