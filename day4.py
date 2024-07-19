@@ -8,7 +8,7 @@ def read_input_file(file_name: str) -> list:
     return content
 
 
-def check_passport(passport: list) -> bool:
+def check_passport(passport: str) -> bool:
     required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]  # optional field: "cid"
     for required_field in required_fields:
         if required_field not in passport:
@@ -17,7 +17,7 @@ def check_passport(passport: list) -> bool:
     return True
 
 
-def check_passport_details(passport: list) -> bool:
+def check_passport_details(passport: str) -> bool:
     passport = passport.splitlines()
     passport_dict = dict()
     for line in passport:
@@ -91,8 +91,6 @@ def compute_part_two(file_name: str) -> int:
     print(f'{number_valid_passports= }')
 
     return number_valid_passports
-
-    return 0
 
 
 if __name__ == '__main__':
