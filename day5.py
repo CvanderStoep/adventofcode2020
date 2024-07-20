@@ -41,7 +41,7 @@ def compute_part_one(file_name: str) -> int:
 def compute_part_two(file_name: str) -> int:
     inputs = read_input_file(file_name)
     seats = []
-    your_seat = 1
+    your_seat = -1
     for seat in inputs:
         begin, end = 0, 127
         for i in range(7):
