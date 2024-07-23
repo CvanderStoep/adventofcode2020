@@ -27,6 +27,8 @@ def count_answers_two(answers: list) -> int:
         set2 = set(letters)
         answer_set = answer_set.intersection(set2)
 
+    # print(answer_set)
+
     return len(answer_set)
 
 
