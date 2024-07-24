@@ -23,6 +23,22 @@ def process_rule(rule: str, bags_dict: dict) -> dict:
     return bags_dict
 
 
+def process_rule2(rule: str, bags_dict: dict) -> dict:
+    color, contain = rule.split("contain ")
+    color1, color2, _ = color.split()
+    color = color1 + color2
+    bag_list = []
+    bags_dict.update({color: bag_list})
+    content = contain.split(", ")
+    for bags in content:
+        if "no " not in bags:
+            n, color1, color2, _ = bags.split()
+            color = color1 + color2
+            bag_list.append((n, color))
+
+    return bags_dict
+
+
 def convert_children_to_parents(bag_dict: dict) -> dict:
     parent_dict = dict()
     for key in bag_dict:
@@ -32,6 +48,20 @@ def convert_children_to_parents(bag_dict: dict) -> dict:
             bag_list.append(key)
             parent_dict.update({value: bag_list})
     return parent_dict
+
+
+def calculate_total_number_of_bags(starting_color: str, bag_dict: dict) -> int:
+
+    bags = bag_dict[starting_color]
+    if not bags:
+        return 1
+    else:
+        total = 0
+        for bag in bags:
+            n, color = bag
+            n = int(n)
+            total += n * calculate_total_number_of_bags(color, bag_dict)
+        return total + 1
 
 
 def find_all_parents(starting_color: str, parents_dict: dict) -> set:
@@ -59,8 +89,12 @@ def compute_part_one(file_name: str) -> int:
 
 
 def compute_part_two(file_name: str) -> int:
-    inputs = read_input_file(file_name)
-    return 0
+    rules = read_input_file(file_name)
+    bags_dict = dict()
+    for rule in rules:
+        bags_dict = process_rule2(rule, bags_dict)
+    n = calculate_total_number_of_bags(starting_color="shinygold", bag_dict=bags_dict) - 1
+    return n
 
 
 if __name__ == '__main__':
