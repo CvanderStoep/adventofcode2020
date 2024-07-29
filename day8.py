@@ -43,7 +43,7 @@ def process_instruction(instructions: list, position: int, accumulator: int) -> 
                 accumulator += argument
             case "jmp":
                 position += argument
-        if position >= len(instructions):
+        if position >= len(instructions): # part 2, reached the end of instructions, no loop
             print('error is fixed')
             print(f'{accumulator= }')
             error_fixed = True
@@ -66,19 +66,16 @@ def compute_part_two(file_name: str) -> int:
     error_fixed = False
     accumulator = 0
     for i in range(len(instructions)):
+        position, accumulator = 0, 0
+        for instruction in instructions:
+            instruction.visited = False
         match instructions[i].operator:
             case "jmp":
                 instructions[i].operator = "nop"
-                position, accumulator = 0, 0
-                for instruction in instructions:
-                    instruction.visited = False
                 accumulator, error_fixed = process_instruction(instructions, position, accumulator)
                 instructions[i].operator = "jmp"
             case "nop":
                 instructions[i].operator = "jmp"
-                position, accumulator = 0, 0
-                for instruction in instructions:
-                    instruction.visited = False
                 accumulator, error_fixed = process_instruction(instructions, position, accumulator)
                 instructions[i].operator = "nop"
             case _:
