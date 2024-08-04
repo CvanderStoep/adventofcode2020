@@ -59,6 +59,7 @@ def part2(data):
         for ix, bus_id in enumerate(bus_ids)
         if not bus_id < 0
     ]
+    print(divisors_and_remainders)
 
     return chinese_remainder_theorem_solver(divisors_and_remainders)
 
