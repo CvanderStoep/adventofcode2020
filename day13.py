@@ -42,17 +42,20 @@ def compute_part_two(file_name: str) -> int:
     # this works, but way too slow ...
     solver = Solver()
     t = Int('t')
+    a = Int('a')
+    b = Int('b')
+    c = Int('c')
 
-    solver.add(t % 23 == 0)
-    solver.add((t + 13) % 41 == 0)
-    solver.add((t + 23) % 733 == 0)
+    # solver.add(t % 23 == 0)
+    # solver.add((t + 13) % 41 == 0)
+    # solver.add((t + 23) % 733 == 0)
     # solver.add((t + 36) % 13 == 0)
     # solver.add((t + 37) % 17 == 0)
     # solver.add((t + 42)%19 == 0)
     # solver.add((t + 52)%29 == 0)
     # solver.add((t + 54)%449 == 0)
     # solver.add((t + 91)%37 == 0)
-    solver.add(t > 0)
+    # solver.add(t > 0)
 
     # solver.add(t == 1789 * a)
     # solver.add(t + 1 == 37 * b)
@@ -62,6 +65,7 @@ def compute_part_two(file_name: str) -> int:
     solver.check()
 
     m = solver.model()
+    print(m)
 
     "traversing model..."
     for d in m.decls():
