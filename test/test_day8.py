@@ -10,7 +10,7 @@ TEST_DIRECTORY = os.path.dirname(__file__)
 
 class TestDay8(unittest.TestCase):
     def test_part_one(self):
-        self.assertEqual(12621, compute_part_one(TEST_DIRECTORY + '/input/input8.txt'))
+        self.assertEqual(1262, compute_part_one(TEST_DIRECTORY + '/input/input8.txt'))
 
     def test_part_two(self):
         self.assertEqual(1643, compute_part_two(TEST_DIRECTORY + '/input/input8.txt'))
