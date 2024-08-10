@@ -65,6 +65,7 @@ def compute_part_one(file_name: str) -> int:
 
 def compute_part_two(file_name: str) -> int:
     inputs = read_input_file(file_name)
+
     return 0
 
 
