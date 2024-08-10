@@ -83,6 +83,6 @@ def compute_using_wolfram(file_name: str) -> str:
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part_one('input/input13.txt')}")
-    print(f"Part I: {compute_part_two('input/input13.txt')}")
-    print(f"Part II: {compute_using_wolfram('input/input13.txt')}")
+    print(f"Part I: {compute_part_one('test/input/input13.txt')}")
+    print(f"Part I: {compute_part_two('test/input/input13.txt')}")
+    print(f"Part II: {compute_using_wolfram('test/input/input13.txt')}")

@@ -77,7 +77,7 @@ def extract_data(lines) -> (int, list):
     return timestamp, bus_ids
 
 
-with open('input/input13.txt') as f:
+with open('test/input/input13.txt') as f:
     inputs = [
         line
         for line in f.read().splitlines()

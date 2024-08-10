@@ -32,7 +32,7 @@ def compute_part_one(file_name: str) -> int:
 
 def compute_part_two(file_name: str) -> int:
     inputs = read_input_file(file_name)
-    target_sum = compute_part_one('input/input9.txt')
+    target_sum = compute_part_one('test/input/input9.txt')
 
     for position in range(len(inputs)):
         for length in range(2, len(inputs)):
@@ -44,5 +44,5 @@ def compute_part_two(file_name: str) -> int:
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part_one('input/input9.txt')}")
-    print(f"Part II: {compute_part_two('input/input9.txt')}")
+    print(f"Part I: {compute_part_one('test/input/input9.txt')}")
+    print(f"Part II: {compute_part_two('test/input/input9.txt')}")
