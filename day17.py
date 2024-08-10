@@ -70,5 +70,5 @@ def compute_part_two(file_name: str) -> int:
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part_one('input/input17.txt')}")
-    print(f"Part II: {compute_part_two('input/input17.txt')}")
+    print(f"Part I: {compute_part_one('test/input/input17.txt')}")
+    print(f"Part II: {compute_part_two('test/input/input17.txt')}")

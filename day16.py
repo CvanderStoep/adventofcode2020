@@ -10,12 +10,12 @@ def read_input_file(file_name: str) -> list:
 
 
 def process_ranges(input_range: list) -> list:
-    ouput_range = []
+    output_range = []
     for line in input_range:
         b, e = line.split('-')
         b, e = int(b), int(e)
-        ouput_range.append((b, e))
-    return ouput_range
+        output_range.append((b, e))
+    return output_range
 
 
 def process_tickets(input_tickets: list) -> list:
