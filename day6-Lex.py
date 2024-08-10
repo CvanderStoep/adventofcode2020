@@ -23,5 +23,5 @@ def compute_part(file_name, answer_operator, initial_answer_set) -> int:
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part('input/input6.txt', lambda xs, ys: xs.union(ys), set())}")
-    print(f"Part II: {compute_part('input/input6.txt', lambda xs, ys: xs.intersection(ys), set(string.ascii_lowercase))}")
+    print(f"Part I: {compute_part('test/input/input6.txt', lambda xs, ys: xs.union(ys), set())}")
+    print(f"Part II: {compute_part('test/input/input6.txt', lambda xs, ys: xs.intersection(ys), set(string.ascii_lowercase))}")

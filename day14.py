@@ -99,5 +99,5 @@ def dec2bin(number: int):
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part_one('input/input14.txt')}")
-    print(f"Part II: {compute_part_two('input/input14.txt')}")
+    print(f"Part I: {compute_part_one('test/input/input14.txt')}")
+    print(f"Part II: {compute_part_two('test/input/input14.txt')}")

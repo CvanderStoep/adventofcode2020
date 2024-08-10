@@ -118,7 +118,7 @@ def part2(rules: dict, nearby: List[List[int]], ticket: List[int]) -> int:
 
 
 def main():
-    rules, ticket, nearby = parse_input('input/input16.txt')
+    rules, ticket, nearby = parse_input('test/input/input16.txt')
     print(f'Part 1: {part1(rules, nearby)}')
     print(f'Part 2: {part2(rules, nearby, ticket)}')
 

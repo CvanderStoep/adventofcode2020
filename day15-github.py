@@ -29,7 +29,7 @@ def part2(data):
     return play(data, 30000000)
 
 
-with open('input/input15.txt') as f:
+with open('test/input/input15.txt') as f:
     inputs = [
         int(i)
         for i in f.read().split(',')

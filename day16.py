@@ -153,6 +153,6 @@ def compute_part_one(file_name: str) -> int:
 
 
 if __name__ == '__main__':
-    print(f"Part I: {compute_part_one('input/input16.txt')}")
-    print(f"Part II: {compute_part_two('input/input16.txt')}")
+    print(f"Part I: {compute_part_one('test/input/input16.txt')}")
+    print(f"Part II: {compute_part_two('test/input/input16.txt')}")
     solver_demo()
