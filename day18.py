@@ -1,7 +1,6 @@
-import re
-
-
 def evaluate(s):
+    # input equation without brackets, example 3 + 5 * 7 + 8 = 64
+    # evaluate left to right
     content = s.split()
     if len(content) == 1:
         return int(s)
@@ -15,6 +14,9 @@ def evaluate(s):
 
 
 def evaluate2(s):
+    # input equation without brackets, example 3 + 5 * 7 + 8 = 120
+    # evaluate, but + operator has preference and is evaluated before multiplication
+
     content = s.split()
     if len(content) == 1:
         return int(s)
@@ -33,6 +35,7 @@ def evaluate2(s):
 
 
 def parse(s):
+    # parses bracket before passing to the evaluation function
     if "(" in s:
         i = s.rindex("(")
         j = s.find(")", i)
