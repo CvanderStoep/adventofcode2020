@@ -1,4 +1,3 @@
-import itertools
 from itertools import combinations
 
 
@@ -6,14 +5,8 @@ def read_input_file(file_name: str) -> list:
     with open(file_name) as f:
         content = f.read().splitlines()
 
-    # numbers = []
-    # for line in content:
-    #     numbers.append(int(line))
-
     numbers = [int(line) for line in content]
-
     return numbers
-
 
 
 def compute_part_one(file_name: str) -> int:
