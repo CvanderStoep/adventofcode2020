@@ -37,9 +37,8 @@ def make_rule_dict(lines: str) -> dict:
     return rules
 
 
-def compute_part_one(file_name: str) -> int:
+def yield_message(lines):
     solution_queue = queue.Queue()
-    lines = read_input_file(file_name)
     rules = make_rule_dict(lines[0])
     start_sequence = rules[0][0]
     valid_message = ""
@@ -60,9 +59,6 @@ def compute_part_one(file_name: str) -> int:
         value = rules[number]
         if isinstance(value, str):
             message += value
-            print(len(message))
-            if len(message) > 50:
-                break
             if len(solution) > 0:
                 solution_queue.put((solution, message))
             else:
@@ -72,11 +68,18 @@ def compute_part_one(file_name: str) -> int:
                 new_solution = l + solution
                 solution_queue.put((new_solution, message))
 
+    return valid_message_set
+
+
+def compute_part_one(file_name: str) -> int:
+    lines = read_input_file(file_name)
+
+    valid_message_set = yield_message(lines)
+
     messages = lines[1].split()
     no_of_valid_messages = 0
     for message in messages:
         if message in valid_message_set:
-            print(message)
             no_of_valid_messages += 1
 
     return no_of_valid_messages
