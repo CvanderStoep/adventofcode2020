@@ -16,13 +16,13 @@ def play(starting_nums: list[int], stop_at: int) -> int:
                 mem[latest] = (-1, ix)
             else:
                 mem[latest] = (mem[latest][1], ix)
-    print(mem)
+    # print(mem)
 
     return latest
 
 
 def part1(data):
-    return play(data, 10)
+    return play(data, 2020)
 
 
 def part2(data):
@@ -34,7 +34,7 @@ with open('test/input/input15.txt') as f:
         int(i)
         for i in f.read().split(',')
     ]
-    print(inputs)
+    # print(inputs)
 
     print(part1(inputs))
-    # print(part2(inputs))
+    print(part2(inputs))
