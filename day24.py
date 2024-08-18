@@ -55,7 +55,6 @@ def get_min_max(tiles) -> (int, int, int, int):
 
 def flip_flop(tiles: dict) -> dict:
     neighbours = [(2, 0), (-2, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
-    # x_min, x_max, y_min, y_max = get_min_max(tiles)
     new_tiles = dict()
     search_area = set()  # search area consists of current black tiles + neighbours
     for key in tiles.keys():
@@ -63,14 +62,6 @@ def flip_flop(tiles: dict) -> dict:
         for dx, dy in neighbours:
             x, y = key
             search_area.add((x + dx, y + dy))
-    # range (x,y):  y is even, x = -2, 0, 2, 4, etc
-    #               y is odd,  x = -1, 1, 3, 5, etc
-    # for y in range(y_min, y_max):
-    #     if y % 2 == 0:
-    #         x_min_mod, x_max_mod = x_min // 2 * 2, x_max // 2 * 2 + 2
-    #     else:
-    #         x_min_mod, x_max_mod = x_min // 2 * 2 - 1, x_max // 2 * 2 + 1
-    #     for x in range(x_min_mod, x_max_mod, 2):
     for x, y in search_area:
         color = tiles.get((x, y), 0)
         no_black_neighbours_tiles = 0
