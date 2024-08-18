@@ -14,7 +14,6 @@ def compute_part_one(file_name: str) -> int:
     door_subject_number = 7
 
     card_value = 1
-    door_value = 1
     card_loop_size = 0
     while card_value != card_public_key:
         card_loop_size += 1
@@ -22,6 +21,7 @@ def compute_part_one(file_name: str) -> int:
         card_value = card_value % division_value
     print(f'{card_loop_size= }, {card_value= }')
 
+    door_value = 1
     door_loop_size = 0
     while door_value != door_public_key:
         door_loop_size += 1
@@ -38,11 +38,5 @@ def compute_part_one(file_name: str) -> int:
     return card_value
 
 
-def compute_part_two(file_name: str) -> int:
-    inputs = read_input_file(file_name)
-    return 0
-
-
 if __name__ == '__main__':
     print(f"Part I: {compute_part_one('test/input/input25.txt')}")
-    print(f"Part II: {compute_part_two('test/input/input25.txt')}")
